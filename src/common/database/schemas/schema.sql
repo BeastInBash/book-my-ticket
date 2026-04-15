@@ -14,5 +14,6 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS seats (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
-isbooked INT DEFAULT 0 CHECK (isbooked IN (0, 1))
+isbooked INT DEFAULT 0 CHECK (isbooked IN (0, 1)),
+user_id INT REFERENCES users(id) ON DELETE SET NULL
 )

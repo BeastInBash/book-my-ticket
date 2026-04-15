@@ -30,7 +30,7 @@ const PgStore = pgSession(session)
 
 const app = new express();
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://book-my-ticket-phi.vercel.app"],
     credentials: true
 }));
 app.use(express.json())
