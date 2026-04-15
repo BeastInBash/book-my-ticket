@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    is_email_verified BOOLEAN DEFAULT FALSE,
+    password TEXT NOT NULL,
+    phone VARCHAR(15),
+    address TEXT,     
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS seats (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+isbooked INT DEFAULT 0 CHECK (isbooked IN (0, 1))
+)
